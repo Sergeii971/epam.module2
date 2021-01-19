@@ -1,0 +1,92 @@
+package com.epam.esm.entity;
+
+/**
+ * The type Tag.
+ *
+ * @author Verbovskiy Sergei
+ * @version 1.0
+ */
+public class Tag implements BaseEntity {
+    private long tagId;
+    private String name;
+
+    public Tag() {
+    }
+
+    public Tag(long tagId, String name) {
+        this.tagId = tagId;
+        this.name = name;
+    }
+
+    /**
+     * Gets tag id.
+     *
+     * @return the tag id
+     */
+    public long getTagId() {
+        return tagId;
+    }
+
+    /**
+     * Sets tag id.
+     *
+     * @param tagId the tag id
+     */
+    public void setTagId(long tagId) {
+        this.tagId = tagId;
+    }
+
+    /**
+     * Gets tag name.
+     *
+     * @return the tag name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Sets name.
+     *
+     * @param name the name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o ==null || this.getClass() != o.getClass()) {
+            return false;
+        }
+        Tag tag = (Tag) o;
+
+        if (name == null) {
+            if (tag.getName() != null) {
+                return false;
+            }
+        } else {
+            if (!name.equals(tag.getName())) {
+                return false;
+            }
+        }
+        return (tagId == tag.getTagId());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 1;
+
+        result += result * 31 + Long.hashCode(tagId);
+        result += result * 31 + (name == null ? 0 : name.hashCode());
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return new StringBuilder().append(tagId).append(" ").append(name).toString();
+    }
+}

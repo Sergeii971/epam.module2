@@ -1,0 +1,245 @@
+2021-01-18 00:08:31 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL statement [createDatabase.sql]
+2021-01-18 00:08:32 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 00:08:32 [main] DEBUG springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 11 bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2021-01-18 00:08:32 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'DB2'
+2021-01-18 00:08:32 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Derby'
+2021-01-18 00:08:32 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'H2'
+2021-01-18 00:08:32 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'HDB'
+2021-01-18 00:08:32 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'HSQL'
+2021-01-18 00:08:32 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Informix'
+2021-01-18 00:08:32 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MS-SQL'
+2021-01-18 00:08:32 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MySQL'
+2021-01-18 00:08:32 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Oracle'
+2021-01-18 00:08:32 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'PostgreSQL'
+2021-01-18 00:08:32 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Sybase'
+2021-01-18 00:08:32 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodesFactory - Looking up default SQLErrorCodes for DataSource [com.zaxxer.hikari.HikariDataSource@132e0cc]
+2021-01-18 00:08:32 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 00:08:32 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodesFactory - SQL error codes for 'H2' found
+2021-01-18 00:08:32 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodesFactory - Caching SQL error codes for DataSource [com.zaxxer.hikari.HikariDataSource@132e0cc]: database product name is 'H2'
+2021-01-18 00:08:32 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator - Translating SQLException with SQL state '42001', error code '42001', message [Синтаксическая ошибка в выражении SQL "CREATEDATABASE[*].SQL "; ожидалось "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"
+Syntax error in SQL statement "CREATEDATABASE[*].SQL "; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+createDatabase.sql [42001-190]]; SQL was [createDatabase.sql] for task [StatementCallback]
+2021-01-18 00:09:02 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL statement [createDatabase.sql]
+2021-01-18 00:10:09 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL statement [DROP TABLE IF EXISTS gift_certificate;
+CREATE TABLE  gift_certificate (
+  `certificateId` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `description` VARCHAR(100) NOT NULL,
+  `price` DOUBLE NOT NULL,
+  `duration` INT NOT NULL,
+  `createDate` DATETIME NOT NULL,
+  `lastUpdateDate` DATETIME NOT NULL,
+  PRIMARY KEY (`certificateId`));
+
+DROP TABLE IF EXISTS tag;
+CREATE TABLE  tag (
+  `tagId` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`tagId`));]
+2021-01-18 00:13:03 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL statement [createDatabase.sql]
+2021-01-18 00:16:39 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL statement [createDatabase.sql]
+2021-01-18 00:22:40 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 00:22:40 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 00:22:40 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 00:22:40 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 00:22:40 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 00:22:40 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL, PRIMARY KEY (`certificateId`))
+2021-01-18 00:22:40 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS tag
+2021-01-18 00:22:40 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE tag ( `tagId` INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(45) NOT NULL, PRIMARY KEY (`tagId`))
+2021-01-18 00:22:40 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 289 ms.
+2021-01-18 00:22:41 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL statement [createDatabase.sql]
+2021-01-18 00:26:50 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 00:26:50 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 00:26:50 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 00:26:50 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 00:26:50 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 00:26:51 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL, PRIMARY KEY (`certificateId`))
+2021-01-18 00:26:51 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS tag
+2021-01-18 00:26:51 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE tag ( `tagId` INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(45) NOT NULL, PRIMARY KEY (`tagId`))
+2021-01-18 00:26:51 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 98 ms.
+2021-01-18 00:26:51 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL statement [createDatabase.sql]
+2021-01-18 00:30:07 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 00:30:07 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 00:30:07 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 00:30:08 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 00:30:08 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 00:30:08 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-18 00:30:08 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS tag
+2021-01-18 00:30:08 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE tag ( `tagId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL)
+2021-01-18 00:30:08 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 86 ms.
+2021-01-18 00:30:08 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL statement [createDatabase.sql]
+2021-01-18 00:31:48 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 00:31:48 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 00:31:48 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 00:31:49 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 00:31:49 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 00:31:49 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-18 00:31:49 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS tag
+2021-01-18 00:31:49 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE tag ( `tagId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL)
+2021-01-18 00:31:49 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 53 ms.
+2021-01-18 12:27:50 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 12:27:51 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 12:27:51 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:27:53 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 12:27:53 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 12:27:53 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-18 12:27:53 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS tag
+2021-01-18 12:27:53 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE tag ( `tagId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL)
+2021-01-18 12:27:53 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 129 ms.
+2021-01-18 12:27:53 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2021-01-18 12:27:53 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2021-01-18 12:27:53 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 12:27:53 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:27:54 [main] DEBUG springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 11 bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2021-01-18 12:27:54 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'DB2'
+2021-01-18 12:27:55 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Derby'
+2021-01-18 12:27:55 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'H2'
+2021-01-18 12:27:55 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'HDB'
+2021-01-18 12:27:55 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'HSQL'
+2021-01-18 12:27:55 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Informix'
+2021-01-18 12:27:55 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MS-SQL'
+2021-01-18 12:27:55 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MySQL'
+2021-01-18 12:27:55 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Oracle'
+2021-01-18 12:27:55 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'PostgreSQL'
+2021-01-18 12:27:55 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Sybase'
+2021-01-18 12:27:55 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodesFactory - Looking up default SQLErrorCodes for DataSource [org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@1984b1f]
+2021-01-18 12:27:55 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 12:27:55 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:27:55 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodesFactory - SQL error codes for 'H2' found
+2021-01-18 12:27:55 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodesFactory - Caching SQL error codes for DataSource [org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@1984b1f]: database product name is 'H2'
+2021-01-18 12:27:55 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator - Translating SQLException with SQL state '23502', error code '23502', message [Значение NULL не разрешено для поля "NAME"
+NULL not allowed for column "NAME"; SQL statement:
+INSERT INTO gift_certificate(name, description, price, duration, createDate, lastUpdateDate) VALUES (?, ?, ?, ?, ?, ?) [23502-190]] for task [PreparedStatementCallback]
+2021-01-18 12:27:55 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-18 12:27:55 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:30:19 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 12:30:19 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 12:30:19 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:30:20 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 12:30:20 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 12:30:20 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-18 12:30:20 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 86 ms.
+2021-01-18 12:30:20 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT tagId, name FROM tag]
+2021-01-18 12:30:20 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 12:30:20 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:30:21 [main] DEBUG springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 11 bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2021-01-18 12:30:21 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'DB2'
+2021-01-18 12:30:21 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Derby'
+2021-01-18 12:30:21 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'H2'
+2021-01-18 12:30:21 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'HDB'
+2021-01-18 12:30:21 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'HSQL'
+2021-01-18 12:30:21 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Informix'
+2021-01-18 12:30:21 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MS-SQL'
+2021-01-18 12:30:21 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MySQL'
+2021-01-18 12:30:21 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Oracle'
+2021-01-18 12:30:21 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'PostgreSQL'
+2021-01-18 12:30:21 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Sybase'
+2021-01-18 12:30:21 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodesFactory - Looking up default SQLErrorCodes for DataSource [org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@35645047]
+2021-01-18 12:30:21 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 12:30:21 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:30:21 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodesFactory - SQL error codes for 'H2' found
+2021-01-18 12:30:21 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodesFactory - Caching SQL error codes for DataSource [org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@35645047]: database product name is 'H2'
+2021-01-18 12:30:21 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator - Translating SQLException with SQL state '42S02', error code '42102', message [Таблица "TAG" не найдена
+Table "TAG" not found; SQL statement:
+SELECT tagId, name FROM tag [42102-190]]; SQL was [SELECT tagId, name FROM tag] for task [StatementCallback]
+2021-01-18 12:30:21 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-18 12:30:21 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:31:00 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 12:31:00 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 12:31:00 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:31:00 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 12:31:00 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 12:31:00 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-18 12:31:00 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 71 ms.
+2021-01-18 12:31:00 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT certificateId, name, description, price, duration, createDate, lastUpdateDate FROM gift_certificate]
+2021-01-18 12:31:00 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 12:31:00 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:31:01 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-18 12:31:01 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:32:02 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 12:32:02 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 12:32:02 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:32:02 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 12:32:02 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 12:32:02 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-18 12:32:02 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 90 ms.
+2021-01-18 12:32:02 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT certificateId, name, description, price, duration, createDate, lastUpdateDate FROM gift_certificate]
+2021-01-18 12:32:02 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 12:32:02 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:32:02 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-18 12:32:02 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:35:08 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 12:35:08 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 12:35:08 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:35:09 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 12:35:09 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 12:35:09 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-18 12:35:09 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 62 ms.
+2021-01-18 12:35:09 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2021-01-18 12:35:09 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2021-01-18 12:35:10 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 12:35:10 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:35:10 [main] DEBUG springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 11 bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2021-01-18 12:35:10 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'DB2'
+2021-01-18 12:35:10 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Derby'
+2021-01-18 12:35:10 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'H2'
+2021-01-18 12:35:10 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'HDB'
+2021-01-18 12:35:10 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'HSQL'
+2021-01-18 12:35:10 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Informix'
+2021-01-18 12:35:10 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MS-SQL'
+2021-01-18 12:35:10 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MySQL'
+2021-01-18 12:35:10 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Oracle'
+2021-01-18 12:35:10 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'PostgreSQL'
+2021-01-18 12:35:10 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Sybase'
+2021-01-18 12:35:10 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodesFactory - Looking up default SQLErrorCodes for DataSource [org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@74bf1791]
+2021-01-18 12:35:10 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 12:35:10 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:35:10 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodesFactory - SQL error codes for 'H2' found
+2021-01-18 12:35:10 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodesFactory - Caching SQL error codes for DataSource [org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@74bf1791]: database product name is 'H2'
+2021-01-18 12:35:10 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator - Unable to translate SQLException with Error code '22007', will now try the fallback translator
+2021-01-18 12:35:10 [main] DEBUG org.springframework.jdbc.support.SQLStateSQLExceptionTranslator - Extracted SQL state class '22' from value '22007'
+2021-01-18 12:35:10 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-18 12:35:10 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:38:07 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 12:38:07 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 12:38:07 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:38:07 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 12:38:07 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 12:38:07 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` TIMESTAMP NOT NULL, `lastUpdateDate` TIMESTAMP NOT NULL)
+2021-01-18 12:38:07 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 60 ms.
+2021-01-18 12:38:08 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2021-01-18 12:38:08 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2021-01-18 12:38:08 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 12:38:08 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:38:08 [main] DEBUG springframework.beans.factory.xml.XmlBeanDefinitionReader - Loaded 11 bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2021-01-18 12:38:08 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'DB2'
+2021-01-18 12:38:08 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Derby'
+2021-01-18 12:38:08 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'H2'
+2021-01-18 12:38:08 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'HDB'
+2021-01-18 12:38:08 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'HSQL'
+2021-01-18 12:38:08 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Informix'
+2021-01-18 12:38:08 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MS-SQL'
+2021-01-18 12:38:08 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MySQL'
+2021-01-18 12:38:08 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Oracle'
+2021-01-18 12:38:08 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'PostgreSQL'
+2021-01-18 12:38:08 [main] DEBUG springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'Sybase'
+2021-01-18 12:38:08 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodesFactory - Looking up default SQLErrorCodes for DataSource [org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@327bcebd]
+2021-01-18 12:38:08 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 12:38:08 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:38:09 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodesFactory - SQL error codes for 'H2' found
+2021-01-18 12:38:09 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodesFactory - Caching SQL error codes for DataSource [org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@327bcebd]: database product name is 'H2'
+2021-01-18 12:38:09 [main] DEBUG org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator - Unable to translate SQLException with Error code '22007', will now try the fallback translator
+2021-01-18 12:38:09 [main] DEBUG org.springframework.jdbc.support.SQLStateSQLExceptionTranslator - Extracted SQL state class '22' from value '22007'
+2021-01-18 12:38:09 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-18 12:38:09 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:43:38 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 12:43:38 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 12:43:38 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 12:43:39 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 12:43:39 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 12:43:39 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME default NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-18 12:43:39 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 64 ms.
+2021-01-18 12:43:39 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2021-01-18 12:43:39 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2021-01-18 12:43:39 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 12:43:39 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]

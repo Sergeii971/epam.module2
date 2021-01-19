@@ -1,0 +1,214 @@
+2021-01-18 14:05:35 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (1, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:05:35 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (2, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:05:35 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 28 ms.
+2021-01-18 14:05:35 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT certificateId, name, description, price, duration, createDate, lastUpdateDate FROM gift_certificate]
+2021-01-18 14:05:35 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:05:35 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:05:35 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-18 14:05:35 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:24 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 14:06:24 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:24 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:24 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 14:06:24 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 14:06:24 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-18 14:06:24 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (1, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:24 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (2, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:24 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 62 ms.
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (1, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (2, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 6 ms.
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (1, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (2, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 8 ms.
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM gift_certificate WHERE certificateId = ?]
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT certificateId, name, description, price, duration, createDate, lastUpdateDate FROM gift_certificate]
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (1, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (2, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 8 ms.
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [DELETE FROM gift_certificate WHERE certificateId = ?]
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT certificateId, name, description, price, duration, createDate, lastUpdateDate FROM gift_certificate]
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (1, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (2, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 8 ms.
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE gift_certificate SET name = ?, description = ?, price = ?, duration = ?, createDate = ?, lastUpdateDate = ? WHERE certificateId = ?]
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (1, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (2, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 11 ms.
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL update
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [UPDATE gift_certificate SET name = ?, description = ?, price = ?, duration = ?, createDate = ?, lastUpdateDate = ? WHERE certificateId = ?]
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (1, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (2, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 15 ms.
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT certificateId, name, description, price, duration, createDate, lastUpdateDate FROM gift_certificate WHERE certificateId = ?]
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (1, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (2, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 23 ms.
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT certificateId, name, description, price, duration, createDate, lastUpdateDate FROM gift_certificate WHERE certificateId = ?]
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (1, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (2, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 8 ms.
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT certificateId, name, description, price, duration, createDate, lastUpdateDate FROM gift_certificate]
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (1, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (2, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-18 14:06:25 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 8 ms.
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL query [SELECT certificateId, name, description, price, duration, createDate, lastUpdateDate FROM gift_certificate]
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-18 14:06:25 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-18 14:06:25 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-19 17:04:18 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-19 17:04:18 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-19 17:04:18 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-19 17:04:19 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-19 17:04:19 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-19 17:04:20 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-19 17:04:20 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (1, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-19 17:04:20 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (2, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-19 17:04:20 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 122 ms.
+2021-01-19 17:04:20 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2021-01-19 17:04:20 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2021-01-19 17:04:20 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-19 17:04:20 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-19 17:04:20 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2021-01-19 17:04:20 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT certificateId, name, description, price, duration, createDate, lastUpdateDate FROM gift_certificate WHERE certificateId = ?]
+2021-01-19 17:04:20 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-19 17:04:20 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-19 17:04:20 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-19 17:04:20 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-19 17:05:18 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-19 17:05:18 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-19 17:05:19 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-19 17:05:19 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-19 17:05:19 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-19 17:05:20 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-19 17:05:20 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (1, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-19 17:05:20 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (2, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-19 17:05:20 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 199 ms.
+2021-01-19 17:05:20 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2021-01-19 17:05:20 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2021-01-19 17:05:20 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-19 17:05:20 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-19 17:05:20 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL query
+2021-01-19 17:05:20 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement [SELECT certificateId, name, description, price, duration, createDate, lastUpdateDate FROM gift_certificate WHERE certificateId = ?]
+2021-01-19 17:05:20 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-19 17:05:20 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-19 17:05:20 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2021-01-19 17:05:20 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-19 17:05:20 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2021-01-19 17:05:20 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-19 17:05:20 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-19 17:05:20 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executing SQL script from class path resource [createDatabase.sql]
+2021-01-19 17:05:20 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: DROP TABLE IF EXISTS gift_certificate
+2021-01-19 17:05:20 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 0 returned as update count for SQL: CREATE TABLE gift_certificate ( `certificateId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(45) NOT NULL, `description` VARCHAR(100) NOT NULL, `price` DOUBLE NOT NULL, `duration` INT NOT NULL, `createDate` DATETIME NOT NULL, `lastUpdateDate` DATETIME NOT NULL)
+2021-01-19 17:05:20 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (1, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-19 17:05:20 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - 1 returned as update count for SQL: INSERT into gift_certificate values (2, 'qqq','qqq', 12, 12, '2021-01-18T13:39:01.322', '2021-01-18T13:39:01.322')
+2021-01-19 17:05:20 [main] DEBUG springframework.jdbc.datasource.init.ScriptUtils - Executed SQL script from class path resource [createDatabase.sql] in 7 ms.
+2021-01-19 17:05:20 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing SQL update and returning generated keys
+2021-01-19 17:05:20 [main] DEBUG org.springframework.jdbc.core.JdbcTemplate - Executing prepared SQL statement
+2021-01-19 17:05:20 [main] DEBUG org.springframework.jdbc.datasource.DataSourceUtils - Fetching JDBC Connection from DataSource
+2021-01-19 17:05:20 [main] DEBUG org.springframework.jdbc.datasource.SimpleDriverDataSource - Creating new JDBC Driver Connection to [jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false]
+2021-01-19 17:05:20 [main] INFO  springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory - Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
