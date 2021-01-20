@@ -6,6 +6,7 @@ import com.epam.esm.dto.GiftCertificateDto;
 import com.epam.esm.dto.GiftCertificateQueryParametersDto;
 import com.epam.esm.service.GiftCertificateService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -29,10 +30,12 @@ import java.util.List;
 @RequestMapping("/v1/giftCertificates")
 public class GiftCertificateController {
     private final GiftCertificateService service;
+    private final ApplicationContext applicationContext;
 
     @Autowired
-    public GiftCertificateController(GiftCertificateService giftCertificateService) {
+    public GiftCertificateController(GiftCertificateService giftCertificateService, ApplicationContext applicationContext) {
         this.service = giftCertificateService;
+        this.applicationContext = applicationContext;
     }
 
     /**
@@ -109,8 +112,10 @@ public class GiftCertificateController {
                                                                                  String sortType,
                                                                      @RequestParam(value = "orderType", required = false)
                                                                                  String orderType) {
-        GiftCertificateQueryParametersDto.OrderType orderType1 = ToOrderTypeConverter.convertToOrderType(orderType);
-        GiftCertificateQueryParametersDto.SortType sortType1 = ToSortTypeConverter.convertToSortType(sortType);
+        ToOrderTypeConverter toOrderTypeConverter = applicationContext.getBean(ToOrderTypeConverter.class);
+        GiftCertificateQueryParametersDto.OrderType orderType1 = toOrderTypeConverter.convertToOrderType(orderType);
+        ToSortTypeConverter toSortTypeConverter = applicationContext.getBean(ToSortTypeConverter.class);
+        GiftCertificateQueryParametersDto.SortType sortType1 = toSortTypeConverter.convertToSortType(sortType);
         GiftCertificateQueryParametersDto giftCertificateQueryParametersDto = new GiftCertificateQueryParametersDto(
                 tagName, name, description, sortType1, orderType1);
         return service.findGiftCertificatesByParameters(giftCertificateQueryParametersDto);

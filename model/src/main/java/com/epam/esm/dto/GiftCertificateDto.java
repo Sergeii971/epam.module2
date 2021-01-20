@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,7 @@ public class GiftCertificateDto implements BaseDto {
     @JsonProperty("description")
     private String description;
     @JsonProperty("price")
-    private double price;
+    private BigDecimal price;
     @JsonProperty("duration")
     private int duration;
     @JsonProperty("createDate")
@@ -42,8 +43,8 @@ public class GiftCertificateDto implements BaseDto {
         tags = new ArrayList<>();
     }
 
-    public GiftCertificateDto(long certificateId, String name, String description, double price, int duration,
-                           LocalDateTime createDate, LocalDateTime lastUpdateDate) {
+    public GiftCertificateDto(long certificateId, String name, String description, BigDecimal price, int duration,
+                              LocalDateTime createDate, LocalDateTime lastUpdateDate) {
         this.certificateId = certificateId;
         this.name = name;
         this.description = description;
@@ -54,7 +55,7 @@ public class GiftCertificateDto implements BaseDto {
         tags = new ArrayList<>();
     }
 
-    public GiftCertificateDto(Long certificateId, String name, String description, double price, int duration,
+    public GiftCertificateDto(Long certificateId, String name, String description, BigDecimal price, int duration,
                               LocalDateTime createDate, LocalDateTime lastUpdateDate, List<TagDto> tags) {
         this.certificateId = certificateId;
         this.name = name;
@@ -125,7 +126,7 @@ public class GiftCertificateDto implements BaseDto {
      *
      * @return the price
      */
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
@@ -134,7 +135,7 @@ public class GiftCertificateDto implements BaseDto {
      *
      * @param price the price
      */
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -265,8 +266,16 @@ public class GiftCertificateDto implements BaseDto {
                 return false;
             }
         }
-        return ((certificateId == certificate.getCertificateId()) && (price == certificate.getPrice())
-                && (duration == certificate.getDuration()));
+        if (price == null) {
+            if (certificate.getPrice() != null) {
+                return false;
+            }
+        } else {
+            if (!price.equals(certificate.getPrice())) {
+                return false;
+            }
+        }
+        return ((certificateId == certificate.getCertificateId()) && (duration == certificate.getDuration()));
     }
 
     @Override
@@ -280,14 +289,26 @@ public class GiftCertificateDto implements BaseDto {
         result += result * 31 + (lastUpdateDate == null ? 0 : lastUpdateDate.hashCode());
         result += result * 31 + (tags == null ? 0 : tags.hashCode());
         result += result * 31 + duration;
-        result += result * 31 + Double.hashCode(price);
+        result += result * 31 + price.hashCode();
         return result;
     }
 
     @Override
     public String toString() {
-        return new StringBuilder().append(certificateId).append(" ").append(name).append(" ").append(description)
-                .append(" ").append(price).append(" ").append(duration).append(" ").append(createDate).append(" ")
-                .append(lastUpdateDate).append(" ").append(tags).toString();
+        return new StringBuilder()
+                .append(certificateId)
+                .append(" ").append(name)
+                .append(" ").append(description)
+                .append(" ")
+                .append(price)
+                .append(" ")
+                .append(duration)
+                .append(" ")
+                .append(createDate)
+                .append(" ")
+                .append(lastUpdateDate)
+                .append(" ")
+                .append(tags)
+                .toString();
     }
 }

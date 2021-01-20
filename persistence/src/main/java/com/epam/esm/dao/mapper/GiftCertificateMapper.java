@@ -5,6 +5,7 @@ import com.epam.esm.entity.GiftCertificate;
 import com.epam.esm.entity.Tag;
 import org.springframework.jdbc.core.RowMapper;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDateTime;
@@ -29,7 +30,7 @@ public class GiftCertificateMapper implements RowMapper<GiftCertificate> {
         long certificateId = resultSet.getLong(ColumnName.GIFT_CERTIFICATE_ID);
         String name = resultSet.getString(ColumnName.GIFT_CERTIFICATE_NAME);
         String description = resultSet.getString(ColumnName.DESCRIPTION);
-        double price = resultSet.getDouble(ColumnName.PRICE);
+        BigDecimal price = resultSet.getBigDecimal(ColumnName.PRICE);
         int duration = resultSet.getInt(ColumnName.DURATION);
         LocalDateTime createDate = LocalDateTime.of(resultSet.getDate(ColumnName.CREATE_DATE).toLocalDate(),
                 resultSet.getTime(ColumnName.CREATE_DATE).toLocalTime());

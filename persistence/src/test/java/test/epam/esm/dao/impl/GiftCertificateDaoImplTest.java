@@ -13,6 +13,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,7 @@ class GiftCertificateDaoImplTest {
         long certificateId = 1;
         String name = "qqq";
         String description = "qqq";
-        double price = 12;
+        BigDecimal price = new BigDecimal("12.0");
         int duration = 12;
         LocalDateTime createDate = LocalDateTime.of(2021, 1, 18, 13, 39, 1);
         LocalDateTime lastUpdateDate = LocalDateTime.of(2021, 1, 18, 13, 39, 1);
@@ -63,7 +64,7 @@ class GiftCertificateDaoImplTest {
         long certificateId = 1;
         String name = "qqq";
         String description = "qqq";
-        double price = 12;
+        BigDecimal price = new BigDecimal("12.0");
         int duration = 12;
         LocalDateTime createDate = LocalDateTime.now();
         LocalDateTime lastUpdateDate = LocalDateTime.of(2021, 1, 18, 13, 39, 1);
@@ -85,7 +86,7 @@ class GiftCertificateDaoImplTest {
         long certificateId = 1;
         String name = "qqq";
         String description = "qqq";
-        double price = 12;
+        BigDecimal price = new BigDecimal("12.0");
         int duration = 12;
         LocalDateTime createDate = LocalDateTime.of(2021, 1, 18, 13, 39, 1);
         LocalDateTime lastUpdateDate = LocalDateTime.of(2021, 1, 18, 13, 39,
@@ -102,7 +103,7 @@ class GiftCertificateDaoImplTest {
         long certificateId = 1;
         String name = "qqq";
         String description = "qqq";
-        double price = 0;
+        BigDecimal price = new BigDecimal("4.0");
         int duration = 12;
         LocalDateTime createDate = LocalDateTime.of(2021, 1, 18, 13, 39, 1);
         LocalDateTime lastUpdateDate = LocalDateTime.of(2021, 1, 18, 13, 39,
@@ -119,7 +120,7 @@ class GiftCertificateDaoImplTest {
         long certificateId = 1;
         String name = "qqq";
         String description = "qqq";
-        double price = 12;
+        BigDecimal price = new BigDecimal("12.0");
         int duration = 12;
         LocalDateTime createDate = LocalDateTime.of(2021, 1, 18, 13, 39, 1);
         LocalDateTime lastUpdateDate = LocalDateTime.of(2021, 1, 18, 13, 39,
@@ -137,7 +138,7 @@ class GiftCertificateDaoImplTest {
         long certificateId = 1;
         String name = "qqq";
         String description = "qqq";
-        double price = 12;
+        BigDecimal price = new BigDecimal("12.0");
         int duration = 12;
         LocalDateTime createDate = LocalDateTime.of(2021, 1, 18, 13, 39, 1);
         LocalDateTime lastUpdateDate = LocalDateTime.of(2021, 1, 18, 13, 39,
@@ -154,7 +155,7 @@ class GiftCertificateDaoImplTest {
         long certificateId = 1;
         String name = "qqq";
         String description = "qqq";
-        double price = 12;
+        BigDecimal price = new BigDecimal("12.0");
         int duration = 12;
         LocalDateTime createDate = LocalDateTime.of(2021, 1, 18, 13, 39, 1);
         LocalDateTime lastUpdateDate = LocalDateTime.of(2021, 1, 18, 13, 39,
@@ -172,7 +173,7 @@ class GiftCertificateDaoImplTest {
         long certificateId = 1;
         String name = "qqq";
         String description = "qqq";
-        double price = 12;
+        BigDecimal price = new BigDecimal("12.0");
         int duration = 12;
         LocalDateTime createDate = LocalDateTime.of(2021, 1, 18, 13, 39, 1);
         LocalDateTime lastUpdateDate = LocalDateTime.of(2021, 1, 18, 13, 39,
@@ -190,7 +191,7 @@ class GiftCertificateDaoImplTest {
         long certificateId = 1;
         String name = "qqq";
         String description = "qqq";
-        double price = 12;
+        BigDecimal price = new BigDecimal("12.0");
         int duration = 12;
         LocalDateTime createDate = LocalDateTime.now();
         LocalDateTime lastUpdateDate = LocalDateTime.now();
@@ -209,7 +210,7 @@ class GiftCertificateDaoImplTest {
         long certificateId = 1;
         String name = "qqq";
         String description = "qqq";
-        double price = 12;
+        BigDecimal price = new BigDecimal("12.0");
         int duration = 12;
         LocalDateTime createDate = LocalDateTime.now();
         LocalDateTime lastUpdateDate = LocalDateTime.now();

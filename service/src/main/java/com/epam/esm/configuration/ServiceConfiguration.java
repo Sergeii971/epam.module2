@@ -1,5 +1,7 @@
 package com.epam.esm.configuration;
 
+import com.epam.esm.entity.GiftCertificate;
+import com.epam.esm.validator.GiftCertificateValidator;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.context.annotation.Bean;

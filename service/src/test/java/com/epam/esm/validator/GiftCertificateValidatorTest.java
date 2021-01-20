@@ -1,64 +1,52 @@
 package com.epam.esm.validator;
 
+import com.epam.esm.entity.GiftCertificate;
+import com.epam.esm.entity.Tag;
 import org.junit.jupiter.api.Test;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 class GiftCertificateValidatorTest {
     @Test
-    public void isNameCorrectPositiveTest() {
-        boolean actual = GiftCertificateValidator.isNameCorrect("eee");
-        boolean expected = true;
+    public void isGiftCertificateDataCorrectPositiveTest() {
+        long certificateId = 1;
+        String name = "qqq";
+        String description = "qqq";
+        BigDecimal price = new BigDecimal("12.0");
+        int duration = 12;
+        LocalDateTime createDate = LocalDateTime.now();
+        LocalDateTime lastUpdateDate = LocalDateTime.now();
+        List<Tag> tags = new ArrayList<>();
+        GiftCertificate giftCertificate = new GiftCertificate(certificateId, name, description, price, duration,
+                createDate, lastUpdateDate, tags);
+        GiftCertificateValidator validator = new GiftCertificateValidator();
+        Optional<String> actual = validator.isGiftCertificateDataCorrect(giftCertificate);
+        Optional<String> expected = Optional.empty();
         assertEquals(actual, expected);
     }
 
     @Test
     public void isNameCorrectNegativeTest() {
-        boolean actual = GiftCertificateValidator.isNameCorrect("eee");
-        boolean expected = false;
-        assertNotEquals(actual, expected);
-    }
-
-    @Test
-    public void isDescriptionCorrectPositiveTst() {
-        boolean actual = GiftCertificateValidator.isDescriptionCorrect("eee");
-        boolean expected = true;
-        assertEquals(actual, expected);
-    }
-
-    @Test
-    public void isDescriptionCorrectNegativeTst() {
-        boolean actual = GiftCertificateValidator.isDescriptionCorrect("eee");
-        boolean expected = false;
-        assertNotEquals(actual, expected);
-    }
-
-    @Test
-    public void isPriceCorrectPositiveTest() {
-        boolean actual = GiftCertificateValidator.isPriceCorrect(222);
-        boolean expected = true;
-        assertEquals(actual, expected);
-    }
-
-    @Test
-    public void isPriceCorrectNegativeTest() {
-        boolean actual = GiftCertificateValidator.isPriceCorrect(222);
-        boolean expected = false;
-        assertNotEquals(actual, expected);
-    }
-
-    @Test
-    public void isDurationCorrectPositiveTest() {
-        boolean actual = GiftCertificateValidator.isDurationCorrect(22);
-        boolean expected = true;
-        assertEquals(actual, expected);
-    }
-
-    @Test
-    public void isDurationCorrectNegativeTest() {
-        boolean actual = GiftCertificateValidator.isDurationCorrect(22);
-        boolean expected = false;
+        long certificateId = 1;
+        String name = "";
+        String description = "qqq";
+        BigDecimal price = new BigDecimal("12.0");
+        int duration = 12;
+        LocalDateTime createDate = LocalDateTime.now();
+        LocalDateTime lastUpdateDate = LocalDateTime.now();
+        List<Tag> tags = new ArrayList<>();
+        GiftCertificate giftCertificate = new GiftCertificate(certificateId, name, description, price, duration,
+                createDate, lastUpdateDate, tags);
+        GiftCertificateValidator validator = new GiftCertificateValidator();
+        Optional<String> actual = validator.isGiftCertificateDataCorrect(giftCertificate);
+        Optional<String> expected = Optional.empty();
         assertNotEquals(actual, expected);
     }
 }

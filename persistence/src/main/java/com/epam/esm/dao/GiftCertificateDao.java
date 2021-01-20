@@ -23,7 +23,7 @@ public interface GiftCertificateDao {
     /**
      * Find gift certificate by id.
      *
-     * @return optional
+     * @return the found gift certificate
      */
     Optional<GiftCertificate> findById(long certificateId);
 

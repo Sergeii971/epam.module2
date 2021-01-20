@@ -45,9 +45,11 @@ public class GiftCertificateServiceImpl implements GiftCertificateService {
     public void add(GiftCertificateDto giftCertificateDto) {
         addAndSetTags(giftCertificateDto);
         GiftCertificate giftCertificate = modelMapper.map(giftCertificateDto, GiftCertificate.class);
-        String errorMessage = GiftCertificateValidator.isGiftCertificateDataCorrect(giftCertificate);
-        if (!errorMessage.isEmpty()) {
-            throw new IncorrectParameterValueException(errorMessage);
+        GiftCertificateValidator validator = new GiftCertificateValidator();
+        Optional<String> errorMessage = validator.isGiftCertificateDataCorrect(giftCertificate);
+
+        if (errorMessage.isPresent()) {
+            throw new IncorrectParameterValueException(errorMessage.get());
         }
         LocalDateTime currentTime = LocalDateTime.now();
         giftCertificate.setCreateDate(currentTime);
@@ -70,18 +72,15 @@ public class GiftCertificateServiceImpl implements GiftCertificateService {
     @Override
     public List<GiftCertificateDto> findAll() {
         List<GiftCertificate> giftCertificates = giftCertificateDao.findAll();
-        return giftCertificates.stream().map(giftCertificate1 -> modelMapper.map(giftCertificate1, GiftCertificateDto.class))
+        return giftCertificates
+                .stream()
+                .map(giftCertificate1 -> modelMapper.map(giftCertificate1, GiftCertificateDto.class))
                 .collect(Collectors.toList());
     }
 
     @Override
     public GiftCertificateDto updateGiftCertificate(GiftCertificateDto modifiedGiftCertificateDto) {
         GiftCertificate modifiedGiftCertificate = modelMapper.map(modifiedGiftCertificateDto, GiftCertificate.class);
-        String errorMessage = GiftCertificateValidator.isGiftCertificateDataCorrect(modifiedGiftCertificate);
-
-        if (!errorMessage.isEmpty()) {
-            throw new IncorrectParameterValueException(errorMessage);
-        }
         Optional<GiftCertificate> foundGiftCertificate = giftCertificateDao.findById(modifiedGiftCertificateDto
                 .getCertificateId());
         if (!foundGiftCertificate.isPresent()) {
@@ -89,6 +88,12 @@ public class GiftCertificateServiceImpl implements GiftCertificateService {
                     .getCertificateId() + " not found.");
         }
         updateGiftCertificateFields(foundGiftCertificate.get(), modifiedGiftCertificate);
+        GiftCertificateValidator validator = new GiftCertificateValidator();
+        Optional<String> errorMessage = validator.isGiftCertificateDataCorrect(modifiedGiftCertificate);
+
+        if (errorMessage.isPresent()) {
+            throw new IncorrectParameterValueException(errorMessage.get());
+        }
         GiftCertificate updatedGiftCertificate = giftCertificateDao.update(foundGiftCertificate.get());
         return modelMapper.map(updatedGiftCertificate, GiftCertificateDto.class);
     }
@@ -113,7 +118,10 @@ public class GiftCertificateServiceImpl implements GiftCertificateService {
             prepareParametersForRequest(giftCertificateQueryParameters);
             foundGiftCertificates = giftCertificateDao.findByQueryParameters(giftCertificateQueryParameters);
         }
-        return foundGiftCertificates.stream().map(this::convertGiftCertificateAndSetTags).collect(Collectors.toList());
+        return foundGiftCertificates
+                .stream()
+                .map(this::convertGiftCertificateAndSetTags)
+                .collect(Collectors.toList());
     }
 
     private GiftCertificateDto convertGiftCertificateAndSetTags(GiftCertificate giftCertificate) {
@@ -170,7 +178,7 @@ public class GiftCertificateServiceImpl implements GiftCertificateService {
         if (Objects.nonNull(modifiedGiftCertificate.getDescription())) {
             foundGiftCertificate.setDescription(modifiedGiftCertificate.getDescription());
         }
-        if (modifiedGiftCertificate.getPrice() != 0) {
+        if (Objects.nonNull(modifiedGiftCertificate.getPrice())) {
             foundGiftCertificate.setPrice(modifiedGiftCertificate.getPrice());
         }
         foundGiftCertificate.setLastUpdateDate(LocalDateTime.now());

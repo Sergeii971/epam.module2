@@ -29,6 +29,12 @@ import java.util.Optional;
 public class GiftCertificateDaoImpl implements GiftCertificateDao {
     private final JdbcTemplate jdbcTemplate;
     private final GiftCertificateMapper giftCertificateMapper = new GiftCertificateMapper();
+    private static final int NAME_INDEX = 1;
+    private static final int DESCRIPTION_INDEX = 2;
+    private static final int PRICE_INDEX = 3;
+    private static final int DURATION_INDEX = 4;
+    private static final int CREATE_DATE_INDEX = 5;
+    private static final int LAST_UPDATE_DATE_INDEX = 6;
 
     @Autowired
     public GiftCertificateDaoImpl(JdbcTemplate jdbcTemplate) {
@@ -42,12 +48,12 @@ public class GiftCertificateDaoImpl implements GiftCertificateDao {
         jdbcTemplate.update(connection -> {
             PreparedStatement statement = connection.prepareStatement(DatabaseQuery.ADD_GIFT_CERTIFICATE,
                     Statement.RETURN_GENERATED_KEYS);
-            statement.setString(1, giftCertificate.getName());
-            statement.setString(2, giftCertificate.getDescription());
-            statement.setDouble(3, giftCertificate.getPrice());
-            statement.setInt(4, giftCertificate.getDuration());
-            statement.setTimestamp(5, Timestamp.valueOf(giftCertificate.getCreateDate()));
-            statement.setTimestamp(6, Timestamp.valueOf(giftCertificate.getLastUpdateDate()));
+            statement.setString(NAME_INDEX, giftCertificate.getName());
+            statement.setString(DESCRIPTION_INDEX, giftCertificate.getDescription());
+            statement.setBigDecimal(PRICE_INDEX, giftCertificate.getPrice());
+            statement.setInt(DURATION_INDEX, giftCertificate.getDuration());
+            statement.setTimestamp(CREATE_DATE_INDEX, Timestamp.valueOf(giftCertificate.getCreateDate()));
+            statement.setTimestamp(LAST_UPDATE_DATE_INDEX, Timestamp.valueOf(giftCertificate.getLastUpdateDate()));
             return statement;
         }, keyHolder);
         if (Objects.nonNull(keyHolder.getKey())) {
@@ -59,7 +65,9 @@ public class GiftCertificateDaoImpl implements GiftCertificateDao {
     @Override
     public Optional<GiftCertificate> findById(long certificateId) {
         return jdbcTemplate.query(DatabaseQuery.FIND_CERTIFICATE_BY_ID, new Object[]{certificateId},
-                giftCertificateMapper).stream().findFirst();
+                giftCertificateMapper)
+                .stream()
+                .findFirst();
     }
 
     @Override
@@ -69,8 +77,12 @@ public class GiftCertificateDaoImpl implements GiftCertificateDao {
 
     @Override
     public List<GiftCertificate> findByQueryParameters(GiftCertificateQueryParameters parameters) {
-        String query = new StringBuilder().append(DatabaseQuery.FIND_BY_QUERY_PARAMETERS).append(parameters.getSortType()
-                .getSortType()).append(" ").append(parameters.getOrderType().getOrderType()).toString();
+        String query = new StringBuilder()
+                .append(DatabaseQuery.FIND_BY_QUERY_PARAMETERS)
+                .append(parameters.getSortType().getSortType())
+                .append(" ")
+                .append(parameters.getOrderType().getOrderType())
+                .toString();
         return jdbcTemplate.query(query, new Object[] {
                 parameters.getTagName(),
                 parameters.getName(),

@@ -1,5 +1,8 @@
 package com.epam.esm.entity;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 /**
  * The type Tag.
  *
@@ -8,6 +11,8 @@ package com.epam.esm.entity;
  */
 public class Tag implements BaseEntity {
     private long tagId;
+    @NotNull(message = " Name cannot be null ")
+    @Size(min = 1, max = 45, message = " name must be between 10 and 45 characters ")
     private String name;
 
     public Tag() {

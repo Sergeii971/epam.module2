@@ -15,6 +15,7 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +46,7 @@ class GiftCertificateServiceImplTest {
         long certificateId = 1;
         String name = "qqq";
         String description = "qqq";
-        double price = 12;
+        BigDecimal price = new BigDecimal("12.0");
         int duration = 12;
         LocalDateTime createDate = LocalDateTime.now();
         LocalDateTime lastUpdateDate = LocalDateTime.now();
@@ -65,7 +66,7 @@ class GiftCertificateServiceImplTest {
         long certificateId = 1;
         String name = "qqq";
         String description = "qqq";
-        double price = 12;
+        BigDecimal price = new BigDecimal("12.0");
         int duration = 12;
         LocalDateTime createDate = LocalDateTime.now();
         LocalDateTime lastUpdateDate = LocalDateTime.now();
@@ -85,7 +86,7 @@ class GiftCertificateServiceImplTest {
         long certificateId = 1;
         String name = "qqq";
         String description = "qqq";
-        double price = 12;
+        BigDecimal price = new BigDecimal("12.0");
         int duration = 12;
         LocalDateTime createDate = LocalDateTime.now();
         LocalDateTime lastUpdateDate = LocalDateTime.now();
@@ -103,7 +104,7 @@ class GiftCertificateServiceImplTest {
         long certificateId = 1;
         String name = "qqq";
         String description = "qqq";
-        double price = 12;
+        BigDecimal price = new BigDecimal("12.0");
         int duration = 12;
         LocalDateTime createDate = LocalDateTime.now();
         LocalDateTime lastUpdateDate = LocalDateTime.now();

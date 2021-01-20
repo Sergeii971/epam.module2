@@ -2,6 +2,9 @@ package com.epam.esm.converter;
 
 import com.epam.esm.dto.GiftCertificateQueryParametersDto;
 import com.epam.esm.exception.IncorrectParameterValueException;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.RequestScope;
 
 import java.util.Objects;
 
@@ -11,16 +14,15 @@ import java.util.Objects;
  * @author Verbovskiy Sergei
  * @version 1.0
  */
+@Component
+@RequestScope
 public class ToOrderTypeConverter {
-    private ToOrderTypeConverter() {
-    }
-
     /**
      * convert To Order Type.
      *
      * @return the OrderType
      */
-    public static GiftCertificateQueryParametersDto.OrderType convertToOrderType(String orderTypeStringFormat) {
+    public GiftCertificateQueryParametersDto.OrderType convertToOrderType(String orderTypeStringFormat) {
         GiftCertificateQueryParametersDto.OrderType orderType = null;
         if (Objects.nonNull(orderTypeStringFormat)) {
             try {

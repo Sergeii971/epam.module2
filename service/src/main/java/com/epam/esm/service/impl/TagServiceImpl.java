@@ -34,8 +34,11 @@ public class TagServiceImpl implements TagService {
     @Override
     public TagDto add(TagDto tagDto) {
         Tag tag = modelMapper.map(tagDto, Tag.class);
-        if (!TagValidator.isNameCorrect(tag.getName())) {
-            throw new IncorrectParameterValueException("incorrect tag name");
+        TagValidator validator = new TagValidator();
+        Optional<String> errorMessage = validator.isTagDataCorrect(tag);
+
+        if (errorMessage.isPresent()) {
+            throw new IncorrectParameterValueException(errorMessage.get());
         }
         Optional<Tag> existingTag = tagDao.findByName(tag.getName());
         Tag addedTag = existingTag.orElseGet(() -> tagDao.add(tag));
@@ -55,7 +58,10 @@ public class TagServiceImpl implements TagService {
     @Override
     public List<TagDto> findAll() {
         List<Tag> tags = tagDao.findAll();
-        return tags.stream().map(tag -> modelMapper.map(tag, TagDto.class)).collect(Collectors.toList());
+        return tags
+                .stream()
+                .map(tag -> modelMapper.map(tag, TagDto.class))
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -68,6 +74,9 @@ public class TagServiceImpl implements TagService {
     @Override
     public List<TagDto> findTagsByGiftCertificateId(long giftCertificateId) {
         List<Tag> foundTags = tagDao.findByGiftCertificateId(giftCertificateId);
-        return foundTags.stream().map(foundTag -> modelMapper.map(foundTag, TagDto.class)).collect(Collectors.toList());
+        return foundTags
+                .stream()
+                .map(foundTag -> modelMapper.map(foundTag, TagDto.class))
+                .collect(Collectors.toList());
     }
 }

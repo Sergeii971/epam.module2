@@ -6,7 +6,7 @@ package com.epam.esm.entity;
  * @author Verbovskiy Sergei
  * @version 1.0
  */
-public class GiftCertificateQueryParameters implements BaseEntity {
+public class GiftCertificateQueryParameters {
     private String tagName;
     private String name;
     private String description;

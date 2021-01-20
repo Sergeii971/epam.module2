@@ -1,5 +1,10 @@
 package com.epam.esm.entity;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,15 +17,24 @@ import java.util.List;
  */
 public class GiftCertificate implements BaseEntity {
     private long certificateId;
+    @NotNull(message = " Name cannot be null ")
+    @Size(min = 1, max = 45, message = " name must be between 10 and 45 characters ")
     private String name;
+    @NotNull(message = " description cannot be null ")
+    @Size(min = 1, max = 100, message = " description must be between 10 and 100 characters ")
     private String description;
-    private double price;
+    @NotNull(message = " incorrect price")
+    @Min(value = 1, message = "price should not be less than 1.0")
+    @Max(value = 100000, message = "price should not be greater than 100000.0")
+    private BigDecimal price;
+    @Min(value = 1, message = "duration should not be less than 1")
+    @Max(value = 100, message = "duration should not be greater than 100")
     private int duration;
     private LocalDateTime createDate;
     private LocalDateTime lastUpdateDate;
     private List<Tag> tags;
 
-    public GiftCertificate(long certificateId, String name, String description, double price, int duration,
+    public GiftCertificate(long certificateId, String name, String description, BigDecimal price, int duration,
                            LocalDateTime createDate, LocalDateTime lastUpdateDate) {
         this.certificateId = certificateId;
         this.name = name;
@@ -32,7 +46,7 @@ public class GiftCertificate implements BaseEntity {
         tags = new ArrayList<>();
     }
 
-    public GiftCertificate(long certificateId, String name, String description, double price, int duration,
+    public GiftCertificate(long certificateId, String name, String description, BigDecimal price, int duration,
                            LocalDateTime createDate, LocalDateTime lastUpdateDate, List<Tag> tags) {
         this.certificateId = certificateId;
         this.name = name;
@@ -106,7 +120,7 @@ public class GiftCertificate implements BaseEntity {
      *
      * @return the price
      */
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
@@ -115,7 +129,7 @@ public class GiftCertificate implements BaseEntity {
      *
      * @param price the price
      */
-    public void setPrice(double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
@@ -246,8 +260,16 @@ public class GiftCertificate implements BaseEntity {
                 return false;
             }
         }
-        return ((certificateId == certificate.getCertificateId()) && (price == certificate.getPrice())
-                && (duration == certificate.getDuration()));
+        if (price == null) {
+            if (certificate.getPrice() != null) {
+                return false;
+            }
+        } else {
+            if (!price.equals(certificate.getPrice())) {
+                return false;
+            }
+        }
+        return ((certificateId == certificate.getCertificateId()) && (duration == certificate.getDuration()));
     }
 
     @Override
@@ -261,14 +283,26 @@ public class GiftCertificate implements BaseEntity {
         result += result * 31 + (lastUpdateDate == null ? 0 : lastUpdateDate.hashCode());
         result += result * 31 + (tags == null ? 0 : tags.hashCode());
         result += result * 31 + duration;
-        result += result * 31 + Double.hashCode(price);
+        result += result * 31 + price.hashCode();
         return result;
     }
 
     @Override
     public String toString() {
-        return new StringBuilder().append(certificateId).append(" ").append(name).append(" ").append(description)
-                .append(" ").append(price).append(" ").append(duration).append(" ").append(createDate).append(" ")
-                .append(lastUpdateDate).append(" ").append(tags).toString();
+        return new StringBuilder()
+                .append(certificateId)
+                .append(" ").append(name)
+                .append(" ").append(description)
+                .append(" ")
+                .append(price)
+                .append(" ")
+                .append(duration)
+                .append(" ")
+                .append(createDate)
+                .append(" ")
+                .append(lastUpdateDate)
+                .append(" ")
+                .append(tags)
+                .toString();
     }
 }

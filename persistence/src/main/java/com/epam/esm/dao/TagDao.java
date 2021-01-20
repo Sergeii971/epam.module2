@@ -30,7 +30,7 @@ public interface TagDao {
     /**
      * Find tag by id.
      *
-     * @return optional
+     * @return the found tag
      */
     Optional<Tag> findById(long tagId);
 

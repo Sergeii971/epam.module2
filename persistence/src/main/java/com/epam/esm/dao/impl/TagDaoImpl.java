@@ -26,6 +26,7 @@ import java.util.Optional;
 public class TagDaoImpl implements TagDao {
     private final JdbcTemplate jdbcTemplate;
     private final TagMapper tagMapper = new TagMapper();
+    private static final int NAME_INDEX = 1;
 
     @Autowired
     public TagDaoImpl(JdbcTemplate jdbcTemplate) {
@@ -37,7 +38,7 @@ public class TagDaoImpl implements TagDao {
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(connection -> {
             PreparedStatement statement = connection.prepareStatement(DatabaseQuery.ADD_TAG, Statement.RETURN_GENERATED_KEYS);
-            statement.setString(1, tag.getName());
+            statement.setString(NAME_INDEX, tag.getName());
             return statement;
         }, keyHolder);
         if (Objects.nonNull(keyHolder.getKey())) {

@@ -2,7 +2,12 @@ package com.epam.esm.validator;
 
 import com.epam.esm.entity.GiftCertificate;
 
-import java.util.Objects;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
+import java.util.Optional;
+import java.util.Set;
 
 /**
  * The type GiftCertificateValidator.
@@ -11,85 +16,28 @@ import java.util.Objects;
  * @version 1.0
  */
 public class GiftCertificateValidator {
-    private static final String NAME_PATTERN = "^[0-9a-zA-Z-_]{1,45}$";
-    private static final String DESCRIPTION_PATTERN = "[^*<>\\\\/{|}]{0,100}";
-    private static final double MIN_PRICE = 1;
-    private static final double MAX_PRICE = 100000;
-    private static final int MIN_DURATION = 1;
-    private static final int MAX_DURATION = 100;
-
-    private GiftCertificateValidator(){
-    }
+    private final ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+    private final Validator validator = factory.getValidator();
 
     /**
      * Validate gift certificate data.
      *
      * @param certificate the gift certificate
-     * @return String
+     * @return the error message
      */
-    public static String isGiftCertificateDataCorrect(GiftCertificate certificate) {
+    public Optional<String> isGiftCertificateDataCorrect(GiftCertificate certificate) {
+        Optional<String> message = Optional.empty();
         StringBuilder builder = new StringBuilder();
-        if (!isNameCorrect(certificate.getName())) {
-            builder.append("incorrect certificate name");
-            builder.append("\n");
-        }
-        if (!isDescriptionCorrect(certificate.getDescription())) {
-            builder.append("incorrect description");
-            builder.append("\n");
-        }
-        if (!isPriceCorrect(certificate.getPrice())) {
-            builder.append("incorrect price");
-            builder.append("\n");
-        }
-        if (!isDurationCorrect(certificate.getDuration())) {
-            builder.append("incorrect duration");
-            builder.append("\n");
-        }
-        return builder.toString();
-    }
+        Set<ConstraintViolation<GiftCertificate>> violations = validator.validate(certificate);
 
-    /**
-     * Validate name.
-     *
-     * @param name the name
-     * @return boolean
-     */
-    public static boolean isNameCorrect(String name) {
-        return (Objects.nonNull(name) && name.matches(NAME_PATTERN));
-    }
-
-    /**
-     * Validate description.
-     *
-     * @param description the description
-     * @return boolean
-     */
-    public static boolean isDescriptionCorrect(String description) {
-        return (Objects.nonNull(description) && description.matches(DESCRIPTION_PATTERN));
-    }
-
-    /**
-     * Validate price.
-     *
-     * @param price the price
-     * @return boolean
-     */
-    public static boolean isPriceCorrect(double price) {
-        return (price >= MIN_PRICE && price <= MAX_PRICE);
-    }
-
-    /**
-     * Validate duration.
-     *
-     * @param duration the duration
-     * @return boolean
-     */
-    public static boolean isDurationCorrect(int duration) {
-        boolean result = true;
-
-        if (duration < MIN_DURATION || duration > MAX_DURATION) {
-            result = false;
+        for (ConstraintViolation<GiftCertificate> violation : violations) {
+            builder
+                    .append(violation.getMessage())
+                    .append(" ");
         }
-        return result;
+        if (builder.length() != 0) {
+            message = Optional.of(builder.toString());
+        }
+        return message;
     }
 }
