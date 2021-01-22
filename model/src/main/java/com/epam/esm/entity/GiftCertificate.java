@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * The type GiftCertificate.
@@ -17,18 +18,17 @@ import java.util.List;
  */
 public class GiftCertificate implements BaseEntity {
     private long certificateId;
-    @NotNull(message = " Name cannot be null ")
-    @Size(min = 1, max = 45, message = " name must be between 10 and 45 characters ")
+    @NotNull(message = "javax.validation.constraints.NotNull.message.name")
+    @Size(min = 1, max = 45, message = "javax.validation.constraints.Size.message.name")
     private String name;
-    @NotNull(message = " description cannot be null ")
-    @Size(min = 1, max = 100, message = " description must be between 10 and 100 characters ")
+    @NotNull(message = "javax.validation.constraints.NotNull.message.description")
+    @Size(min = 1, max = 100, message = "javax.validation.constraints.Size.message.description")
     private String description;
-    @NotNull(message = " incorrect price")
-    @Min(value = 1, message = "price should not be less than 1.0")
-    @Max(value = 100000, message = "price should not be greater than 100000.0")
+    @Min(value = 1, message = "javax.validation.constraints.Min.message.price")
+    @Max(value = 100000, message = "javax.validation.constraints.Max.message.price")
     private BigDecimal price;
-    @Min(value = 1, message = "duration should not be less than 1")
-    @Max(value = 100, message = "duration should not be greater than 100")
+    @Min(value = 1, message = "javax.validation.constraints.Min.message.duration")
+    @Max(value = 100, message = "javax.validation.constraints.Max.message.duration")
     private int duration;
     private LocalDateTime createDate;
     private LocalDateTime lastUpdateDate;
@@ -215,61 +215,10 @@ public class GiftCertificate implements BaseEntity {
         }
         GiftCertificate certificate = (GiftCertificate) o;
 
-        if (name == null) {
-            if (certificate.getName() != null) {
-                return false;
-            }
-        } else {
-            if (!name.equals(certificate.getName())) {
-                return false;
-            }
-        }
-        if (description == null) {
-            if (certificate.getDescription() != null) {
-                return false;
-            }
-        } else {
-            if (!description.equals(certificate.getDescription())) {
-                return false;
-            }
-        }
-        if (createDate == null) {
-            if (certificate.getCreateDate() != null) {
-                return false;
-            }
-        } else {
-            if (!createDate.equals(certificate.getCreateDate())) {
-                return false;
-            }
-        }
-        if (lastUpdateDate == null) {
-            if (certificate.getLastUpdateDate() != null) {
-                return false;
-            }
-        } else {
-            if (!lastUpdateDate.equals(certificate.getLastUpdateDate())) {
-                return false;
-            }
-        }
-        if (tags == null) {
-            if (certificate.getTags() != null) {
-                return false;
-            }
-        } else {
-            if (!tags.equals(certificate.getTags())) {
-                return false;
-            }
-        }
-        if (price == null) {
-            if (certificate.getPrice() != null) {
-                return false;
-            }
-        } else {
-            if (!price.equals(certificate.getPrice())) {
-                return false;
-            }
-        }
-        return ((certificateId == certificate.getCertificateId()) && (duration == certificate.getDuration()));
+        return (certificateId == certificate.getCertificateId() && Objects.equals(name, certificate.name)
+                && Objects.equals(description, certificate.description) && Objects.equals(createDate, certificate.createDate)
+                && Objects.equals(lastUpdateDate, certificate.lastUpdateDate) && duration == certificate.getDuration()
+                && Objects.equals(tags, certificate.tags) && Objects.equals(price, certificate.price));
     }
 
     @Override

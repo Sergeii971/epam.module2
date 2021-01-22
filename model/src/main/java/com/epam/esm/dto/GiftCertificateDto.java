@@ -2,6 +2,7 @@ package com.epam.esm.dto;
 
 import com.epam.esm.converter.LocalDateTimeSerializer;
 import com.epam.esm.converter.LocalDateTimeDeserializer;
+import com.epam.esm.entity.GiftCertificate;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -10,6 +11,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * The type GiftCertificateDto.
@@ -221,61 +223,10 @@ public class GiftCertificateDto implements BaseDto {
         }
         GiftCertificateDto certificate = (GiftCertificateDto) o;
 
-        if (name == null) {
-            if (certificate.getName() != null) {
-                return false;
-            }
-        } else {
-            if (!name.equals(certificate.getName())) {
-                return false;
-            }
-        }
-        if (description == null) {
-            if (certificate.getDescription() != null) {
-                return false;
-            }
-        } else {
-            if (!description.equals(certificate.getDescription())) {
-                return false;
-            }
-        }
-        if (createDate == null) {
-            if (certificate.getCreateDate() != null) {
-                return false;
-            }
-        } else {
-            if (!createDate.equals(certificate.getCreateDate())) {
-                return false;
-            }
-        }
-        if (lastUpdateDate == null) {
-            if (certificate.getLastUpdateDate() != null) {
-                return false;
-            }
-        } else {
-            if (!lastUpdateDate.equals(certificate.getLastUpdateDate())) {
-                return false;
-            }
-        }
-        if (tags == null) {
-            if (certificate.getTags() != null) {
-                return false;
-            }
-        } else {
-            if (!tags.equals(certificate.getTags())) {
-                return false;
-            }
-        }
-        if (price == null) {
-            if (certificate.getPrice() != null) {
-                return false;
-            }
-        } else {
-            if (!price.equals(certificate.getPrice())) {
-                return false;
-            }
-        }
-        return ((certificateId == certificate.getCertificateId()) && (duration == certificate.getDuration()));
+        return (certificateId == certificate.getCertificateId() && Objects.equals(name, certificate.name)
+                && Objects.equals(description, certificate.description) && Objects.equals(createDate, certificate.createDate)
+                && Objects.equals(lastUpdateDate, certificate.lastUpdateDate) && duration == certificate.getDuration()
+                && Objects.equals(tags, certificate.tags) && Objects.equals(price, certificate.price));
     }
 
     @Override

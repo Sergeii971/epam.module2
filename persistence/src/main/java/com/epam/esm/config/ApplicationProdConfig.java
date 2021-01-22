@@ -4,17 +4,19 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
- * The type ApplicationConfig.
+ * The type ApplicationProdConfig.
  *
  * @author Verbovskiy Sergei
  * @version 1.0
  */
 @Configuration
-public class ApplicationConfig {
-    private static final String PROPERTIES_FILENAME = "/config/database.properties";
+@Profile("prod")
+public class ApplicationProdConfig {
+    private static final String PROPERTIES_FILENAME = "/config/databaseProd.properties";
 
     @Bean
     public JdbcTemplate jdbcTemplate() {

@@ -1,5 +1,7 @@
 package com.epam.esm.exception;
 
+import java.util.List;
+
 /**
  * The type IncorrectParameterValueException.
  *
@@ -7,6 +9,8 @@ package com.epam.esm.exception;
  * @version 1.0
  */
 public class IncorrectParameterValueException extends RuntimeException {
+    private List<String> errorMessages;
+
     public IncorrectParameterValueException() {
         super();
     }
@@ -21,5 +25,14 @@ public class IncorrectParameterValueException extends RuntimeException {
 
     public IncorrectParameterValueException(Throwable throwable) {
         super(throwable);
+    }
+
+    public IncorrectParameterValueException(List<String> errorMessages) {
+        this.errorMessages = errorMessages;
+    }
+
+
+    public List<String> getErrorMessages() {
+        return errorMessages;
     }
 }

@@ -15,9 +15,11 @@ public class ErrorDto implements BaseDto {
     private int errorCode;
 
     public ErrorDto() {
+        super();
     }
 
     public ErrorDto(String errorMessage, int errorCode) {
+        super();
         this.errorMessage = errorMessage;
         this.errorCode = errorCode;
     }

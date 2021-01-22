@@ -27,8 +27,10 @@
     </facet>
     <facet type="Spring" name="Spring">
       <configuration>
-        <fileset id="fileset" name="WebConfiguration" removed="false">
+        <fileset id="fileset" name="WebConfiguration" removed="false" profiles="dev">
           <file>file://$MODULE_DIR$/src/main/java/com/epam/esm/configuration/WebConfiguration.java</file>
+          <file>file://$MODULE_DIR$/../persistence/src/main/java/com/epam/esm/config/ApplicationDevConfig.java</file>
+          <file>file://$MODULE_DIR$/../persistence/src/main/java/com/epam/esm/config/ApplicationTestConfig.java</file>
         </fileset>
       </configuration>
     </facet>

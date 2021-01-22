@@ -3,7 +3,7 @@
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
       <configuration>
-        <fileset id="fileset" name="ServiceConfiguration" removed="false">
+        <fileset id="fileset" name="ServiceConfiguration" removed="false" profiles="prod">
           <file>file://$MODULE_DIR$/src/main/java/com/epam/esm/configuration/ServiceConfiguration.java</file>
           <file>file://$MODULE_DIR$/../dao/src/main/java/com/epam/esm/config/ApplicationConfig.java</file>
         </fileset>

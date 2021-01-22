@@ -2,6 +2,8 @@ package com.epam.esm.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Objects;
+
 /**
  * The type TagDto.
  *
@@ -68,16 +70,7 @@ public class TagDto implements BaseDto {
         }
         TagDto tag = (TagDto) o;
 
-        if (name == null) {
-            if (tag.getName() != null) {
-                return false;
-            }
-        } else {
-            if (!name.equals(tag.getName())) {
-                return false;
-            }
-        }
-        return (tagId == tag.getTagId());
+        return (tagId == tag.getTagId() && Objects.equals(name, tag.name));
     }
 
     @Override

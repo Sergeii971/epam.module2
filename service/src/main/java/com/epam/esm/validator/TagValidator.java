@@ -33,8 +33,7 @@ public class TagValidator {
 
         for (ConstraintViolation<Tag> violation : violations) {
             builder
-                    .append(violation.getMessage())
-                    .append(" ");
+                    .append(violation.getMessage());
         }
         if (builder.length() != 0) {
             message = Optional.of(builder.toString());

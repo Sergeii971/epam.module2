@@ -6,6 +6,7 @@ import com.epam.esm.dto.GiftCertificateQueryParametersDto;
 import com.epam.esm.dto.TagDto;
 import com.epam.esm.entity.GiftCertificate;
 import com.epam.esm.entity.GiftCertificateQueryParameters;
+import com.epam.esm.exception.ExceptionMessageKey;
 import com.epam.esm.exception.IncorrectParameterValueException;
 import com.epam.esm.exception.ResourceNotFoundException;
 import com.epam.esm.service.GiftCertificateService;
@@ -46,7 +47,7 @@ public class GiftCertificateServiceImpl implements GiftCertificateService {
         addAndSetTags(giftCertificateDto);
         GiftCertificate giftCertificate = modelMapper.map(giftCertificateDto, GiftCertificate.class);
         GiftCertificateValidator validator = new GiftCertificateValidator();
-        Optional<String> errorMessage = validator.isGiftCertificateDataCorrect(giftCertificate);
+        Optional<List<String>> errorMessage = validator.isGiftCertificateDataCorrect(giftCertificate);
 
         if (errorMessage.isPresent()) {
             throw new IncorrectParameterValueException(errorMessage.get());
@@ -63,7 +64,7 @@ public class GiftCertificateServiceImpl implements GiftCertificateService {
         Optional<GiftCertificate> giftCertificate = giftCertificateDao.findById(certificateId);
 
         if (!giftCertificate.isPresent()) {
-            throw new ResourceNotFoundException("Gift certificate with id " + certificateId + " not found.");
+            throw new ResourceNotFoundException(ExceptionMessageKey.GIFT_CERTIFICATE_NOT_FOUND_BY_ID);
         }
         giftCertificateDao.removeGiftCertificateHasTag(certificateId);
         giftCertificateDao.remove(certificateId);
@@ -84,12 +85,11 @@ public class GiftCertificateServiceImpl implements GiftCertificateService {
         Optional<GiftCertificate> foundGiftCertificate = giftCertificateDao.findById(modifiedGiftCertificateDto
                 .getCertificateId());
         if (!foundGiftCertificate.isPresent()) {
-            throw new ResourceNotFoundException("Gift certificate with id " + modifiedGiftCertificateDto
-                    .getCertificateId() + " not found.");
+            throw new ResourceNotFoundException(ExceptionMessageKey.GIFT_CERTIFICATE_NOT_FOUND_BY_ID);
         }
         updateGiftCertificateFields(foundGiftCertificate.get(), modifiedGiftCertificate);
         GiftCertificateValidator validator = new GiftCertificateValidator();
-        Optional<String> errorMessage = validator.isGiftCertificateDataCorrect(modifiedGiftCertificate);
+        Optional<List<String>> errorMessage = validator.isGiftCertificateDataCorrect(modifiedGiftCertificate);
 
         if (errorMessage.isPresent()) {
             throw new IncorrectParameterValueException(errorMessage.get());
@@ -103,7 +103,7 @@ public class GiftCertificateServiceImpl implements GiftCertificateService {
         Optional<GiftCertificate> foundGiftCertificate = giftCertificateDao.findById(certificateId);
         return foundGiftCertificate
                 .map(giftCertificate -> modelMapper.map(giftCertificate, GiftCertificateDto.class))
-                .orElseThrow(() -> new ResourceNotFoundException("Gift certificate with id " + certificateId + " not found."));
+                .orElseThrow(() -> new ResourceNotFoundException(ExceptionMessageKey.GIFT_CERTIFICATE_NOT_FOUND_BY_ID));
     }
 
     @Override

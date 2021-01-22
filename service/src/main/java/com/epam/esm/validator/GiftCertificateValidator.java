@@ -6,6 +6,8 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -25,19 +27,17 @@ public class GiftCertificateValidator {
      * @param certificate the gift certificate
      * @return the error message
      */
-    public Optional<String> isGiftCertificateDataCorrect(GiftCertificate certificate) {
-        Optional<String> message = Optional.empty();
-        StringBuilder builder = new StringBuilder();
+    public Optional<List<String>> isGiftCertificateDataCorrect(GiftCertificate certificate) {
+        Optional<List<String>> errorMessagesOptionalFormat = Optional.empty();
+        List<String> errorMessages = new ArrayList<>();
         Set<ConstraintViolation<GiftCertificate>> violations = validator.validate(certificate);
 
         for (ConstraintViolation<GiftCertificate> violation : violations) {
-            builder
-                    .append(violation.getMessage())
-                    .append(" ");
+            errorMessages.add(violation.getMessage());
         }
-        if (builder.length() != 0) {
-            message = Optional.of(builder.toString());
+        if (errorMessages.size() != 0) {
+            errorMessagesOptionalFormat = Optional.of(errorMessages);
         }
-        return message;
+        return errorMessagesOptionalFormat;
     }
 }

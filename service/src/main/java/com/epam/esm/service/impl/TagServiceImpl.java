@@ -3,6 +3,7 @@ package com.epam.esm.service.impl;
 import com.epam.esm.dao.TagDao;
 import com.epam.esm.dto.TagDto;
 import com.epam.esm.entity.Tag;
+import com.epam.esm.exception.ExceptionMessageKey;
 import com.epam.esm.exception.IncorrectParameterValueException;
 import com.epam.esm.exception.ResourceNotFoundException;
 import com.epam.esm.service.TagService;
@@ -49,7 +50,7 @@ public class TagServiceImpl implements TagService {
     public void remove(long tagId) {
         Optional<Tag> tag = tagDao.findById(tagId);
         if (!tag.isPresent()) {
-            throw new ResourceNotFoundException("Gift certificate with id " + tagId + " not found.");
+            throw new ResourceNotFoundException(ExceptionMessageKey.TAG_NOT_FOUND_BY_ID);
         }
         tagDao.removeGiftCertificateHasTag(tagId);
         tagDao.remove(tagId);
@@ -68,7 +69,7 @@ public class TagServiceImpl implements TagService {
     public TagDto findTagById(long tagId) {
         Optional<Tag> foundTag = tagDao.findById(tagId);
         return foundTag.map(tag -> modelMapper.map(tag, TagDto.class))
-                .orElseThrow(() -> new ResourceNotFoundException("Tag with id " + tagId + " not found."));
+                .orElseThrow(() -> new ResourceNotFoundException(ExceptionMessageKey.TAG_NOT_FOUND_BY_ID));
     }
 
     @Override

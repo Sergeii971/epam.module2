@@ -27,8 +27,8 @@ class GiftCertificateValidatorTest {
         GiftCertificate giftCertificate = new GiftCertificate(certificateId, name, description, price, duration,
                 createDate, lastUpdateDate, tags);
         GiftCertificateValidator validator = new GiftCertificateValidator();
-        Optional<String> actual = validator.isGiftCertificateDataCorrect(giftCertificate);
-        Optional<String> expected = Optional.empty();
+        Optional<List<String>> actual = validator.isGiftCertificateDataCorrect(giftCertificate);
+        Optional<List<String>> expected = Optional.empty();
         assertEquals(actual, expected);
     }
 
@@ -45,8 +45,8 @@ class GiftCertificateValidatorTest {
         GiftCertificate giftCertificate = new GiftCertificate(certificateId, name, description, price, duration,
                 createDate, lastUpdateDate, tags);
         GiftCertificateValidator validator = new GiftCertificateValidator();
-        Optional<String> actual = validator.isGiftCertificateDataCorrect(giftCertificate);
-        Optional<String> expected = Optional.empty();
+        Optional<List<String>> actual = validator.isGiftCertificateDataCorrect(giftCertificate);
+        Optional<List<String>> expected = Optional.empty();
         assertNotEquals(actual, expected);
     }
 }
