@@ -15,13 +15,12 @@ import javax.servlet.ServletRegistration;
  * @version 1.0
  */
 public class ApplicationInitializer implements WebApplicationInitializer {
-    private static final String PROFILE_ACTIVE = "dev";
+    
     @Override
     public void onStartup(ServletContext container) {
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
         rootContext.register(WebConfiguration.class);
         container.addListener(new ContextLoaderListener(rootContext));
-        container.setInitParameter("spring.profiles.active", PROFILE_ACTIVE);
 
         ServletRegistration.Dynamic dispatcher =
                 container.addServlet("DispatcherServlet", new DispatcherServlet(rootContext));
